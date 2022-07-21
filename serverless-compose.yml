@@ -4,8 +4,12 @@ services:
     params:
       # does not work - default value does not pass through
       LambdaRoleArn: ${schema.LambdaRoleArn, ''} # runs but entire placeholder is treated as string
+      
       # does not run - The variable "${schema.LambdaRoleArn}" cannot be resolved: the referenced output does not exist. 
       # LambdaRoleArn: ${schema.LambdaRoleArn} 
+      
+
+      # here to show that params are working
       PassedParam: "Hello World"
 
 
