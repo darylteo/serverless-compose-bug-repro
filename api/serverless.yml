@@ -1,0 +1,18 @@
+service: api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+  environment:
+    arn: ${param:LambdaRoleArn}
+    param: ${param:PassedParam}
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
